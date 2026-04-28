@@ -628,6 +628,13 @@ nav {
         overflow-x: hidden;
     }
 
+    .hero-image img {
+        transform: rotate(0deg) !important;
+        /* Quita la inclinación de PC */
+        max-width: 90% !important;
+        transition: transform 0.3s ease;
+    }
+
     /* Forzamos que las grillas se conviertan en una sola columna limpia */
     #contenedor-productos,
     .boardgames-grid,
