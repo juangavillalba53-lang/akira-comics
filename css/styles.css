@@ -25,7 +25,7 @@ body {
 .top-sticky-container {
     position: fixed !important;
     /* Cambiamos sticky por fixed para mayor seguridad en celu */
-    top: 0;
+    top: 28px;
     left: 0;
     width: 100%;
     height: 70px;
@@ -39,6 +39,7 @@ body {
     justify-content: center;
     padding: 0 10px;
     box-sizing: border-box;
+    transition: top 0.3s ease;
 }
 
 header {
@@ -84,7 +85,7 @@ header h1 {
 main,
 #hero,
 .search-container {
-    margin-top: 80px;
+    margin-top: 80px !important;
     /* Tiene que ser la misma altura que le diste al header */
 }
 
@@ -176,7 +177,7 @@ main,
     justify-content: center;
     overflow: hidden;
     background-color: #ffffff;
-    margin-top: 70px !important;
+    margin-top: 100px !important;
 }
 
 .hero-texto-fondo {
@@ -277,7 +278,7 @@ main,
 nav {
     width: 90%;
     max-width: 400px;
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
 #buscador {
@@ -301,10 +302,15 @@ nav {
 /* --- AJUSTE DE SCROLL PARA SECCIONES --- */
 #seccion-cartas,
 #figuras,
-#juegos-mesa,
-#info-local {
-    scroll-margin-top: 80px;
+#juegos-mesa {
+    scroll-margin-top: 85px;
     /* Esto evita que la barra fija tape los títulos */
+}
+
+#info-local {
+    /* Si querés que el título quede más abajo del header, bajá el número (ej: 70px) */
+    /* Si querés que el título quede con más espacio arriba, subí el número (ej: 150px) */
+    scroll-margin-top: 70px !important;
 }
 
 #seccion-cartas .section-title h2 {
@@ -385,7 +391,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 17px;
+    padding: 15px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -447,7 +453,7 @@ nav {
 /* --- SECCIONES EXTRAS --- */
 .section-title {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .section-title h2,
@@ -458,9 +464,9 @@ nav {
     /* Un poco más de espacio le da un toque más premium */
     font-size: 1.6rem;
     font-weight: 800;
-    margin-top: 60px;
+    margin-top: 25px;
     /* Espacio arriba para que respire */
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     /* Espacio hacia la línea/contenido */
     text-align: center;
     color: #000;
@@ -484,7 +490,7 @@ nav {
 .local-description {
     width: 100%;
     background-color: #f9f9f9;
-    padding: 80px 20px;
+    padding: 35px 20px;
     display: flex;
     justify-content: center;
     border-top: 1px solid #eee;
@@ -669,4 +675,112 @@ nav {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
+}
+
+/* --- BARRA DE ANUNCIOS MOVIL --- */
+.announcement-bar {
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #000000;
+    /* Letras negras */
+    height: 28px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20000;
+    font-size: 0.65rem;
+    font-weight: 700;
+    /* Un poco más de grosor para que se lea perfecto */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eeeeee;
+    /* Una línea muy sutil para separar */
+}
+
+.announcement-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 20001;
+    background-color: #ffffff;
+    /* Ahora el escudo es blanco */
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* Esto crea un degradado que hace que el texto "desaparezca" suavemente */
+.announcement-bar::before {
+    content: "";
+    position: absolute;
+    left: 45px;
+    /* Empieza justo después del logo de IG */
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, #ffffff, transparent);
+    z-index: 19999;
+    pointer-events: none;
+}
+
+.announcement-left a {
+    color: #000000;
+    /* Icono de IG en negro */
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.announcement-left a:hover {
+    opacity: 0.7;
+}
+
+.announcement-content {
+    width: 100%;
+    overflow: hidden;
+    /* Esconde el texto que sale de la pantalla */
+    white-space: nowrap;
+}
+
+.announcement-content p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 22s linear infinite;
+    margin: 0;
+    color: #000000;
+}
+
+/* Animación del movimiento */
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+/* 1. Quitamos cualquier espacio que empuje la sección hacia abajo */
+#seccion-cartas {
+    padding-top: 0 !important;
+    margin-top: -10px !important;
+    /* Si todavía lo ves lejos, probá con un margen negativo sutil */
+}
+
+/* 2. Ajustamos el título de esa sección específicamente */
+#seccion-cartas .section-title {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+    /* Le damos solo un poquito de aire respecto al Hero */
+    margin-bottom: 35px !important;
+}
+
+/* 3. Nos aseguramos que la grilla de productos esté bien arriba */
+#contenedor-productos {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
 }

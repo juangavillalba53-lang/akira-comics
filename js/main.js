@@ -110,4 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
             contenedor.appendChild(card);
         });
     }
+
+    // Efecto para que el header suba al techo al hacer scroll
+    window.onscroll = function () {
+        const header = document.querySelector('.top-sticky-container');
+        if (window.pageYOffset > 28) {
+            header.style.top = "0";
+        } else {
+            header.style.top = "28px";
+        }
+    };
 });
