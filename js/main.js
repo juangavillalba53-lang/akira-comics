@@ -126,16 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const d = item.descripcion ? item.descripcion.replace(/'/g, "\\'").replace(/\n/g, " ") : "";
 
             card.innerHTML = `
-            <div class="${claseImg}">
-                <img src="${item.imagen}">
+                <div class="${claseImg}">
+                    <img src="${item.imagen}">
                 </div>
                 <div class="${claseInfo}">
                     <p class="categoria">${item.categoria || 'Coleccionable'}</p>
                     <h3>${item.nombre}</h3>
-                    
                     <p class="descripcion">${item.descripcion}</p>
                     
-                    <button class="btn-detalles-card" onclick="abrirModal('${n}', '${d}', '${item.imagen}')">
+                    <button type="button" class="btn-detalles-card" onclick="abrirModal('${n}', '${d}', '${item.imagen}'); return false;">
                         VER DETALLES
                     </button>
                 </div>
