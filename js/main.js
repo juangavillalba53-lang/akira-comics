@@ -4,17 +4,24 @@
  */
 
 // --- 1. FUNCIÓN GLOBAL (AFUERA PARA QUE EL BOTÓN LA VEA) ---
-function abrirModal(nombre, descripcion, imagen) {
+function abrirModal(e, nombre, descripcion, imagen) {
+    // 1. FRENAMOS EL SALTO AL INICIO (Crucial para celulares)
+    if (e && e.preventDefault) {
+        e.preventDefault();
+    }
+
     const modal = document.getElementById("modal-producto");
 
-    // Llenamos los datos
+    // 2. Llenamos los datos
     document.getElementById("modal-titulo").innerText = nombre;
     document.getElementById("modal-descripcion").innerText = descripcion;
     document.getElementById("modal-img").src = imagen;
 
-    // Mostramos el modal
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Bloquea el scroll de fondo
+    // 3. Mostramos el modal con Flexbox para que el CSS nuevo funcione
+    modal.style.display = "flex";
+
+    // 4. BLOQUEO DE SCROLL TRASERO
+    document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
 }
 
@@ -134,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${item.nombre}</h3>
                     <p class="descripcion">${item.descripcion}</p>
                     
-                    <button type="button" class="btn-detalles-card" onclick="abrirModal('${n}', '${d}', '${item.imagen}'); return false;">
+                    <button type="button" class="btn-detalles-card" onclick="abrirModal(event, '${n}', '${d}', '${item.imagen}')">
                         VER DETALLES
                     </button>
                 </div>

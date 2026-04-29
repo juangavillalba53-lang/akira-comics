@@ -839,9 +839,9 @@ nav {
 /* El Modal */
 .modal {
     display: none;
+    /* Se cambia a flex desde el JS */
     position: fixed;
     z-index: 30000;
-    /* Por encima de la barra de anuncios */
     left: 0;
     top: 0;
     width: 100%;
@@ -849,6 +849,10 @@ nav {
     background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     overscroll-behavior: contain;
+
+    /* Agregamos esto para centrar en PC y posicionar en Celu */
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
@@ -927,16 +931,32 @@ nav {
     /* Mantiene los saltos de línea de tus descripciones */
 }
 
-/* Ajustes para móviles del Modal */
 @media (max-width: 768px) {
-    .modal-content {
-        margin: 15% auto;
-        padding: 20px;
-        width: 92%;
-        max-height: 80vh;
-        overflow-y: auto;
+
+    /* Agregamos este bloque para posicionar el fondo */
+    .modal {
+        display: none;
+        /* Cambiar a flex en JS */
+        align-items: flex-start !important;
+        /* Lo pega al techo */
+        padding-top: 30px !important;
+        /* Espacio para que la X no toque el borde */
+        overflow-y: auto !important;
     }
 
+    .modal-content {
+        /* CAMBIO CLAVE: margin 0 para que no salte, y lo posicionamos con el padre */
+        margin: 0 auto !important;
+        padding: 20px;
+        width: 92%;
+        max-height: 85vh;
+        /* Le damos un poquito más de aire */
+        overflow-y: auto;
+        /* Quitamos posiciones absolutas si las hubiera */
+        top: 0 !important;
+    }
+
+    /* Tu código de abajo está perfecto, dejalo como está */
     .modal-body {
         flex-direction: column;
         align-items: center;
