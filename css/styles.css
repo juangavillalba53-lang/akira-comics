@@ -209,8 +209,9 @@ main,
 }
 
 .hero-image img {
-    max-width: 650px;
-    width: 100%;
+    max-width: 750px;
+    width: 90%;
+    height: auto;
     transform: rotate(-3deg);
     transition: transform 0.5s ease;
 }
