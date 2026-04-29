@@ -15,14 +15,25 @@ function abrirModal(nombre, descripcion, imagen) {
     // Mostramos el modal
     modal.style.display = "block";
     document.body.style.overflow = "hidden"; // Bloquea el scroll de fondo
+    document.body.style.height = "100vh";
 }
 
-// Lógica para cerrar el modal al tocar la X o afuera
-document.addEventListener("click", (e) => {
+function cerrarModal() {
     const modal = document.getElementById("modal-producto");
-    if (modal && (e.target.classList.contains("close-modal") || e.target === modal)) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
+    modal.style.display = "none";
+
+    // --- AGREGÁ ESTO PARA DEVOLVER EL SCROLL AL USUARIO ---
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+}
+
+// LÓGICA PARA CERRAR EL MODAL (Reemplaza tu bloque de la línea 56)
+document.addEventListener('click', function (event) {
+    const modal = document.getElementById('modal-producto');
+
+    // Si hace clic en la "X" o en el fondo oscuro del modal...
+    if (event.target.classList.contains('close-modal') || event.target === modal) {
+        cerrarModal(); // Llamamos a la función que creamos arriba
     }
 });
 
