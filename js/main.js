@@ -5,9 +5,7 @@
 
 // --- 1. FUNCIÓN GLOBAL (AFUERA PARA QUE EL BOTÓN LA VEA) ---
 function abrirModal(e, nombre, descripcion, imagen) {
-    // 1. Capturamos la posición actual del scroll
-    const scrollY = window.scrollY;
-
+    // Evitamos que el navegador haga cosas raras con el clic
     if (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -18,31 +16,21 @@ function abrirModal(e, nombre, descripcion, imagen) {
     document.getElementById("modal-descripcion").innerText = descripcion;
     document.getElementById("modal-img").src = imagen;
 
-    // 2. Mostramos el modal
+    // Cambiamos a flex para que respete tus ajustes de centrado/arriba
     modal.style.display = "flex";
 
-    // 3. BLOQUEO DINÁMICO: 
-    // Fijamos el body en su posición actual para que no salte al inicio
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
+    // BLOQUEO SIMPLE: No mueve la página, solo apaga el scroll
+    document.documentElement.style.overflow = 'hidden'; // Bloquea el HTML (mejor para iOS)
+    document.body.style.overflow = 'hidden';             // Bloquea el Body
 }
 
 function cerrarModal() {
     const modal = document.getElementById("modal-producto");
-
-    // 1. Obtenemos la posición donde estábamos (guardada en el 'top' del body)
-    const scrollY = document.body.style.top;
-
     modal.style.display = "none";
 
-    // 2. Liberamos el body
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-
-    // 3. Devolvemos el scroll a su lugar exacto
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    // DEVOLVEMOS EL CONTROL: Sin saltos, sin scroll automático
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
 }
 
 // LÓGICA PARA CERRAR EL MODAL (Reemplaza tu bloque de la línea 56)

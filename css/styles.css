@@ -456,6 +456,8 @@ nav {
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    text-align: justify;
+    text-align-last: left;
 }
 
 /* EL BOTÓN (Alineado abajo sin estirar la card) */
@@ -849,10 +851,10 @@ nav {
     background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     overscroll-behavior: contain;
-
     /* Agregamos esto para centrar en PC y posicionar en Celu */
     justify-content: center;
     align-items: center;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-content {
@@ -929,6 +931,9 @@ nav {
     color: #555;
     white-space: pre-line;
     /* Mantiene los saltos de línea de tus descripciones */
+    text-align: justify;
+    text-align-last: left;
+    margin-bottom: 15px;
 }
 
 @media (max-width: 768px) {
@@ -942,6 +947,7 @@ nav {
         padding-top: 30px !important;
         /* Espacio para que la X no toque el borde */
         overflow-y: auto !important;
+        touch-action: none;
     }
 
     .modal-content {
@@ -954,6 +960,7 @@ nav {
         overflow-y: auto;
         /* Quitamos posiciones absolutas si las hubiera */
         top: 0 !important;
+        touch-action: auto;
     }
 
     /* Tu código de abajo está perfecto, dejalo como está */
