@@ -5,33 +5,44 @@
 
 // --- 1. FUNCIÓN GLOBAL (AFUERA PARA QUE EL BOTÓN LA VEA) ---
 function abrirModal(e, nombre, descripcion, imagen) {
-    // 1. FRENAMOS EL SALTO AL INICIO (Crucial para celulares)
-    if (e && e.preventDefault) {
+    // 1. Capturamos la posición actual del scroll
+    const scrollY = window.scrollY;
+
+    if (e) {
         e.preventDefault();
+        e.stopPropagation();
     }
 
     const modal = document.getElementById("modal-producto");
-
-    // 2. Llenamos los datos
     document.getElementById("modal-titulo").innerText = nombre;
     document.getElementById("modal-descripcion").innerText = descripcion;
     document.getElementById("modal-img").src = imagen;
 
-    // 3. Mostramos el modal con Flexbox para que el CSS nuevo funcione
+    // 2. Mostramos el modal
     modal.style.display = "flex";
 
-    // 4. BLOQUEO DE SCROLL TRASERO
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
+    // 3. BLOQUEO DINÁMICO: 
+    // Fijamos el body en su posición actual para que no salte al inicio
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
 }
 
 function cerrarModal() {
     const modal = document.getElementById("modal-producto");
+
+    // 1. Obtenemos la posición donde estábamos (guardada en el 'top' del body)
+    const scrollY = document.body.style.top;
+
     modal.style.display = "none";
 
-    // --- AGREGÁ ESTO PARA DEVOLVER EL SCROLL AL USUARIO ---
-    document.body.style.overflow = "auto";
-    document.body.style.height = "auto";
+    // 2. Liberamos el body
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+
+    // 3. Devolvemos el scroll a su lugar exacto
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
 }
 
 // LÓGICA PARA CERRAR EL MODAL (Reemplaza tu bloque de la línea 56)
