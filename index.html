@@ -81,17 +81,23 @@
         <div class="best-sellers-header-container">
             <div class="section-header">
                 <p class="subtitle">Best Sellers</p>
-                <h2 class="title">Check out these hot products</h2>
-            </div>
-
-            <div class="carousel-nav">
-                <button class="nav-btn prev" id="prevBtn">❮</button>
-                <button class="nav-btn next" id="nextBtn">❯</button>
+                <h2 class="title">Productos destacados 🔥</h2>
             </div>
         </div>
 
         <div class="carousel-container">
+
+            <!-- 🔥 FLECHAS (AHORA SOBRE EL CARRUSEL) -->
+            <div class="carousel-nav">
+                <button class="nav-btn prev" id="prevBtn"></button>
+                <button class="nav-btn next" id="nextBtn"></button>
+            </div>
+
             <div class="carousel-track" id="best-sellers-track"></div>
+
+            <!-- 🔥 PUNTITOS -->
+            <div id="carousel-dots" class="carousel-dots"></div>
+
         </div>
     </section>
 
@@ -100,13 +106,22 @@
         <input type="text" id="buscador" placeholder="BUSCAR EN EL CATÁLOGO">
     </nav>
 
-    <!-- CARTAS -->
     <section id="seccion-cartas">
+
         <div class="section-title">
             <h2>CARTAS / SETS</h2>
         </div>
 
+        <!-- 🔥 FILTROS ABAJO DEL TÍTULO -->
+        <div class="filtros-cartas">
+            <button data-filtro="todos" class="active">Todos</button>
+            <button data-filtro="pokemon">Pokémon</button>
+            <button data-filtro="magic">Magic</button>
+            <button data-filtro="one piece">One Piece</button>
+        </div>
+
         <main id="contenedor-productos"></main>
+
     </section>
 
     <!-- FIGURAS -->
@@ -154,7 +169,22 @@
 
             <div class="footer-section">
                 <h3>Akira Comics TCG</h3>
-                <p><i class="fa-regular fa-envelope"></i> akira.comics@outlook.com</p>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    akira.comics@outlook.com
+                </p>
+
+                <!-- 🔥 REDES -->
+                <div class="footer-redes">
+                    <a href="https://instagram.com/akira.comics.tcg" target="_blank">
+                        <i class="fab fa-instagram"></i> @akira.comics.tcg
+                    </a>
+
+                    <a href="https://www.tiktok.com/@akira.comics.tcg" target="_blank">
+                        <i class="fab fa-tiktok"></i> @akira.comics.tcg
+                    </a>
+                </div>
             </div>
 
             <div class="footer-section">

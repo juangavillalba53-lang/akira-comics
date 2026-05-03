@@ -44,6 +44,7 @@ const figuras = [
     {
         nombre: "JAZWARES POKEMON MEWTWO",
         categoria: "Figura",
+        destacado: true,
         descripcion: `Imponente figura de Mewtwo con un diseño dinámico que captura toda su esencia y poder. La pieza se destaca por su base con efecto de energía en 
                 tonos violeta y azul, junto a detalles de rocas que aportan profundidad y realismo a la escena.`,
         imagen: "assets/img/mee.png"
