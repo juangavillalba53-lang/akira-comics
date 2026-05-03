@@ -1,6 +1,5 @@
 /**
  * MAIN.JS - El Director de Orquesta
- * Maneja la carga inicial, el filtrado universal y la navegación móvil.
  */
 
 // --- 1. FUNCIÓN GLOBAL (AFUERA PARA QUE EL BOTÓN LA VEA) ---
@@ -16,44 +15,41 @@ function abrirModal(e, nombre, descripcion, imagen) {
     document.getElementById("modal-descripcion").innerText = descripcion;
     document.getElementById("modal-img").src = imagen;
 
-    // Cambiamos a flex para que respete tus ajustes de centrado/arriba
     modal.style.display = "flex";
 
-    // BLOQUEO SIMPLE: No mueve la página, solo apaga el scroll
-    document.documentElement.style.overflow = 'hidden'; // Bloquea el HTML (mejor para iOS)
-    document.body.style.overflow = 'hidden';             // Bloquea el Body
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
 }
 
 function cerrarModal() {
     const modal = document.getElementById("modal-producto");
     modal.style.display = "none";
 
-    // DEVOLVEMOS EL CONTROL: Sin saltos, sin scroll automático
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
 }
 
-// LÓGICA PARA CERRAR EL MODAL (Reemplaza tu bloque de la línea 56)
+// Cerrar modal
 document.addEventListener('click', function (event) {
     const modal = document.getElementById('modal-producto');
 
-    // Si hace clic en la "X" o en el fondo oscuro del modal...
     if (event.target.classList.contains('close-modal') || event.target === modal) {
-        cerrarModal(); // Llamamos a la función que creamos arriba
+        cerrarModal();
     }
 });
 
-// --- 2. LÓGICA DE INICIO Y EVENTOS ---
+// --- INICIO ---
 document.addEventListener('DOMContentLoaded', () => {
     const buscador = document.getElementById("buscador");
     const burgerBtn = document.getElementById('burger-btn');
     const navMenu = document.getElementById('nav-menu');
 
-    // --- MENÚ HAMBURGUESA (Tu código intacto) ---
+    // MENÚ HAMBURGUESA
     if (burgerBtn && navMenu) {
         burgerBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             const spans = burgerBtn.querySelectorAll('span');
+
             if (navMenu.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
                 spans[1].style.opacity = '0';
@@ -78,9 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
         spans[2].style.transform = 'none';
     }
 
-    // --- CARGA INICIAL Y BUSCADOR ---
+    // CARGA INICIAL
     actualizarTodasLasSecciones("");
 
+    // BUSCADOR
     if (buscador) {
         buscador.addEventListener("input", (e) => {
             const textoBusqueda = e.target.value.toLowerCase();
@@ -120,7 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.innerHTML = "";
 
         if (lista.length === 0) {
-            contenedor.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #999; padding: 40px;">No se encontraron resultados.</p>`;
+            contenedor.innerHTML = `
+                <p style="grid-column: 1 / -1; text-align: center; color: #999; padding: 40px;">
+                    No se encontraron resultados.
+                </p>`;
             return;
         }
 
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="${claseInfo}">
                     <p class="categoria">${item.categoria || 'Coleccionable'}</p>
                     <h3>${item.nombre}</h3>
-                    <p class="descripcion">${item.descripcion}</p>
+                    <p class="descripcion">${item.descripcion || ""}</p>
                     
                     <button type="button" class="btn-detalles-card" onclick="abrirModal(event, '${n}', '${d}', '${item.imagen}')">
                         VER DETALLES
@@ -149,11 +149,82 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Efecto Scroll Header
+    // SCROLL HEADER
     window.onscroll = function () {
         const header = document.querySelector('.top-sticky-container');
         if (header) {
             header.style.top = (window.pageYOffset > 28) ? "0" : "28px";
         }
     };
+});
+
+// --- BEST SELLERS ---
+function iniciarBestSellers() {
+    const track = document.getElementById('best-sellers-track');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    if (!track) return;
+
+    const destacados = productos.filter(p => p.destacado === true);
+    const mostrar = destacados.length > 0 ? destacados : productos.slice(0, 5);
+
+    track.innerHTML = "";
+
+    mostrar.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'producto-card';
+        card.innerHTML = `
+            <div class="img-container">
+                <img src="${item.imagen}">
+            </div>
+            <div class="info-card">
+                <p class="categoria-card">${item.categoria}</p>
+                <h3>${item.nombre}</h3>
+            </div>
+        `;
+        track.appendChild(card);
+    });
+
+    const getScrollStep = () => {
+        const firstCard = track.querySelector('.producto-card');
+        return firstCard ? firstCard.offsetWidth + 25 : 300;
+    };
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+    }
+
+    let autoPlayInterval;
+
+    const startAutoPlay = () => {
+        autoPlayInterval = setInterval(() => {
+            if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 10) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+            }
+        }, 4000);
+    };
+
+    const stopAutoPlay = () => clearInterval(autoPlayInterval);
+
+    if (mostrar.length > 0) {
+        startAutoPlay();
+        track.addEventListener('mouseenter', stopAutoPlay);
+        track.addEventListener('mouseleave', startAutoPlay);
+        track.addEventListener('touchstart', stopAutoPlay);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof productos !== 'undefined') {
+        iniciarBestSellers();
+    }
 });

@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akira Comics tcg</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
+    <!-- BARRA SUPERIOR -->
     <div class="announcement-bar">
         <div class="announcement-left">
             <a href="https://instagram.com/akira.comics.tcg" target="_blank">
@@ -20,6 +23,8 @@
             <p>¡Envíos a todo el país! • Stock actualizado • Akira Comics TCG •</p>
         </div>
     </div>
+
+    <!-- HEADER -->
     <div class="top-sticky-container">
         <header>
             <a href="index.html" class="logo-link">
@@ -46,6 +51,7 @@
         </header>
     </div>
 
+    <!-- HERO -->
     <section class="hero-producto">
         <div class="hero-texto-fondo">AKIRA</div>
 
@@ -70,18 +76,40 @@
         </div>
     </section>
 
+    <!-- BEST SELLERS -->
+    <section class="best-sellers-section">
+        <div class="best-sellers-header-container">
+            <div class="section-header">
+                <p class="subtitle">Best Sellers</p>
+                <h2 class="title">Check out these hot products</h2>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="nav-btn prev" id="prevBtn">❮</button>
+                <button class="nav-btn next" id="nextBtn">❯</button>
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track" id="best-sellers-track"></div>
+        </div>
+    </section>
+
+    <!-- BUSCADOR -->
     <nav>
         <input type="text" id="buscador" placeholder="BUSCAR EN EL CATÁLOGO">
     </nav>
 
+    <!-- CARTAS -->
     <section id="seccion-cartas">
         <div class="section-title">
-            <h2>CARTAS</h2>
+            <h2>CARTAS / SETS</h2>
         </div>
 
         <main id="contenedor-productos"></main>
     </section>
 
+    <!-- FIGURAS -->
     <section id="figuras" class="figures-container">
         <div class="section-title">
             <h2>Figuras de Colección</h2>
@@ -89,6 +117,7 @@
         <div class="figures-grid"></div>
     </section>
 
+    <!-- JUEGOS DE MESA -->
     <section id="juegos-mesa" class="boardgames-container">
         <div class="section-title">
             <h2>Juegos de Mesa</h2>
@@ -96,6 +125,7 @@
         <div class="boardgames-grid"></div>
     </section>
 
+    <!-- INFO LOCAL -->
     <section id="info-local" class="local-description">
         <div class="local-content">
             <h2>Sobre Akira Comics</h2>
@@ -118,8 +148,10 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-content">
+
             <div class="footer-section">
                 <h3>Akira Comics TCG</h3>
                 <p><i class="fa-regular fa-envelope"></i> akira.comics@outlook.com</p>
@@ -145,6 +177,7 @@
                     <button>SUSCRIBIR</button>
                 </div>
             </div>
+
         </div>
 
         <div class="footer-bottom">
@@ -157,9 +190,11 @@
         </div>
     </footer>
 
+    <!-- MODAL -->
     <div id="modal-producto" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
+
             <div class="modal-body">
                 <div class="modal-img-container">
                     <img id="modal-img" src="" alt="Producto">
@@ -174,10 +209,11 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=2.0"></script>
-    <script src="js/productos.js?v=2.0"></script>
-    <script src="js/figuras.js?v=2.0"></script>
-    <script src="js/juegos.js?v=2.0"></script>
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/figuras.js"></script>
+    <script src="js/juegos.js"></script>
 
 </body>
 

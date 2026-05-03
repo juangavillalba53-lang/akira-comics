@@ -3,6 +3,7 @@ const productos = [
         id: 1,
         nombre: "POKEMON TCG: ASCENDED HEROES PREMIUM POSTER COLLECTION",
         categoria: "Cartas",
+        destacado: true,
         descripcion: `Descubrí la Premium Poster Collection - Ascended Heroes de Pokémon TCG, diseñada para entrenadores y coleccionistas que buscan potenciar 
                 su experiencia de juego y exhibición.Este set incluye una carta promocional foil de arte completo con Mega Lucario ex o Mega Gardevoir ex, 
                 dos Pokémon de Mega Evolución con ataques potentes y gran HP que rompen los límites en batalla. Además, recibirás un poster doble faz 
@@ -14,6 +15,7 @@ const productos = [
         id: 2,
         nombre: "POKÉMON TCG: CELEBRATIONS COLLECTION (DRAGAPULT PRIME)",
         categoria: "Cartas",
+        destacado: true,
         descripcion: `La Colección Celebraciones Dragapult Prime de la reconocida marca Pokémon, está lista para ser parte de tu colección. 
                 Este producto es una unidad de venta que incluye una lámina promocional y una tarjeta de gran tamaño en papel de aluminio, 
                 ambas con un diseño exclusivo que te encantará. Además, contiene dos paquetes de cuatro cartas Celebraciones y un paquete adicional de 
@@ -28,6 +30,7 @@ const productos = [
         id: 3,
         nombre: "POKÉMON TCG: FIRST PARTNER ILLUSTRATION COLLECTION (SERIES 1)",
         categoria: "Cartas",
+        destacado: true,
         descripcion: `Caja coleccionable ideal para fanáticos de Pokémon TCG, que reúne cartas promocionales con ilustraciones exclusivas y sobres para expandir tu 
                 colección. Esta edición destaca por su presentación premium y contenido especial pensado tanto para jugadores como coleccionistas.`,
         precio: 12000,
@@ -37,6 +40,7 @@ const productos = [
         id: 4,
         nombre: "POKÉMON TCG: MEGA EVOLUTION ELITE TRAINER BOX (MEGA LUCARIO)",
         categoria: "Cartas",
+        destacado: true,
         descripcion: `¡Pokémon de todo tipo se juegan el todo por el todo para convertirse en Pokémon Megaevolución ex! Domina el aura poderosa de 
                     Mega Lucario ex, abraza el poder desbordante de Mega Gardevoir ex y alíate con más de estos poderosos Pokémon, que cuentan con ataques devastadores 
                     y una cantidad enorme de PS. Pero piensa bien tu estrategia: ¡más poder conlleva más riesgos! Elige a tus compañeros Pokémon y prepárate para las batallas 
