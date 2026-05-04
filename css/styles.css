@@ -1527,7 +1527,7 @@ nav {
     .local-content p {
         text-align: center !important;
         text-align-last: center !important;
-        max-width: 85%;
+        max-width: 80%;
         margin: 0 auto;
     }
 }
