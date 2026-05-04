@@ -989,6 +989,7 @@ nav {
 /* --- MOBILE --- */
 @media (max-width: 768px) {
 
+    /* MODAL */
     .modal {
         display: none;
         align-items: flex-start !important;
@@ -1001,21 +1002,16 @@ nav {
         margin: 0 auto !important;
         padding: 20px;
         width: 92%;
-
         height: 90vh;
         overflow: hidden;
-
         top: 0 !important;
         touch-action: auto;
 
         display: flex;
         flex-direction: column;
-
         position: relative;
-        /* 🔥 IMPORTANTE para la X */
     }
 
-    /* 🔥 BOTÓN CERRAR (ARREGLADO) */
     .close-modal {
         position: absolute;
         top: 12px;
@@ -1029,13 +1025,10 @@ nav {
         flex-direction: column;
         align-items: center;
         text-align: center;
-
         max-height: 75vh;
         flex: 1;
-
         overflow-y: auto;
         padding-right: 10px;
-        /* 🔥 separa del scroll */
     }
 
     #modal-img {
@@ -1046,6 +1039,43 @@ nav {
 
     .modal-info h2 {
         font-size: 1.2rem;
+    }
+
+    /* 🔥 GUÍA POKÉMON */
+    .guia-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* 🔥 TEXTO SOBRE AKIRA */
+    .local-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .local-content p {
+        text-align: center;
+    }
+
+    /* 🔥 BOTONES FILTRO */
+    .filtros-cartas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .filtros-cartas button {
+        background: #eee !important;
+        color: #000 !important;
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .filtros-cartas button.active {
+        background: #000 !important;
+        color: #fff !important;
     }
 }
 
