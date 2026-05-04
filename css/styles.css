@@ -1521,10 +1521,16 @@ nav {
 
 @media (max-width: 768px) {
 
+    .local-content {
+        max-width: 480px !important;
+        margin: 0 auto;
+        text-align: center;
+    }
+
     .local-content p {
         text-align: center !important;
         text-align-last: center !important;
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
     }
 
