@@ -1044,7 +1044,7 @@ nav {
     /* 🔥 GUIA 1 COLUMNA REAL */
     @media (max-width: 768px) {
         .guia-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
         }
     }
 
@@ -1054,20 +1054,22 @@ nav {
     }
 
     /* 🔥 TEXTO CENTRADO REAL */
-    .local-description {
-        display: flex;
-        justify-content: center;
-    }
+    @media (max-width: 768px) {
 
-    .local-content {
-        width: 90%;
-        max-width: 500px;
-        text-align: center;
-        margin: 0 auto;
-    }
+        .local-description {
+            padding: 0 15px;
+        }
 
-    .local-content p {
-        text-align: center;
+        .local-content {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .local-content p {
+            text-align: center;
+        }
+
     }
 
     /* 🔥 BOTONES */
