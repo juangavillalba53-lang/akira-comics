@@ -3,15 +3,25 @@ const guiasTCG = {
     energia: `Tipos de Energía en el TCG de Pokémon
     En el TCG existen 11 tipos, cada uno con su estilo de juego propio. Acá te los explicamos:
     🌿 Planta — Se curan a sí mismos y envenenan al rival. Ideales para estrategias de resistencia.
+
     🔥 Fuego — Daño masivo con la condición Quemado. Arrancan lento pero explotan fuerte.
+
     💧 Agua — Mueven energía libremente y adaptan su estrategia según el rival.
+
     ⚡ Rayo — Paralizan, huyen rápido y recuperan energía del descarte. Estilo agresivo y veloz.
+
     🔮 Psíquico — Los más creativos: copian ataques, manipulan contadores de daño e infligen múltiples condiciones especiales.
+
     👊 Lucha — Daño alto con poco costo de energía bajo ciertas condiciones. Muy explosivos.
+
     🌑 Oscuridad — Molestan al rival: fuerzan retiradas, descartan energía y envenenan. Estilo tramposo.
+
     ⚙️ Metal — Aguantan mucho y devuelven el golpe. Perfectos para duelos largos.
+
     🐉 Dragón — Los ataques más poderosos del juego, pero requieren dos tipos de energía distintos para funcionar.
+
     🎀 Hada (discontinuado) — Ya no se imprime desde 2020. Esos Pokémon ahora son tipo Psíquico.
+
     ⬜ Incoloro — Se combinan con cualquier tipo. Muy flexibles, aprovechan las Energías Especiales.`,
 
     juego: `¿Cómo se juega el TCG de Pokémon?
@@ -26,7 +36,6 @@ const guiasTCG = {
 
 
     ¿Cómo se prepara la partida?
-
     Tirá una moneda para ver quién empieza
     Mezclá tu mazo y robá 7 cartas
     Poné un Pokémon Básico en tu Zona Activa
@@ -36,17 +45,15 @@ const guiasTCG = {
 
 
     ¿Qué hacés en tu turno?
-
     Robá una carta
-    Acciones (en cualquier orden):
 
+    Acciones (en cualquier orden):
     Jugá Pokémon Básicos en la Banca
     Evolucioná tus Pokémon
     Adjuntá una carta de Energía
     Jugá cartas de Entrenador
     Retirá tu Pokémon Activo (una vez por turno)
     Usá Habilidades
-
 
     Atacá y terminá tu turno
 
@@ -60,7 +67,6 @@ const guiasTCG = {
 
 
     ¿Querés aprender jugando?
-
     📱 Pokémon TCG Live — app gratuita con tutorial incluido
     🎴 Battle Academy — caja con 3 mazos completos y guía paso a paso, ideal para empezar con amigos`,
 
@@ -163,7 +169,6 @@ const guiasTCG = {
     Se mueve a la Banca
 
     ¿Pueden combinarse?
-
     Envenenado y Quemado sí se pueden tener al mismo tiempo
     Dormido, Paralizado y Confundido no se pueden combinar entre sí — la condición nueva reemplaza a la anterior
     Un Pokémon puede estar Envenenado + Quemado + Paralizado al mismo tiempo
@@ -171,7 +176,6 @@ const guiasTCG = {
 
     Orden de resolución entre turnos
     Cuando termina un turno, las condiciones se resuelven en este orden:
-
     ☠️ Envenenado
     🔥 Quemado
     💤 Dormido
