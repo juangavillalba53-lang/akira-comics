@@ -42,7 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const buscador = document.getElementById("buscador");
     const burgerBtn = document.getElementById('burger-btn');
     const navMenu = document.getElementById('nav-menu');
+    const closeBtn = document.querySelector('.close-modal');
 
+    if (closeBtn) {
+        closeBtn.addEventListener('click', cerrarModal);
+    }
     // MENÚ HAMBURGUESA
     if (burgerBtn && navMenu) {
         burgerBtn.addEventListener('click', () => {
@@ -249,7 +253,11 @@ function iniciarBestSellers() {
 
     const getScrollAmount = () => {
         const card = track.querySelector('.producto-card');
-        return card ? card.offsetWidth * 2.5 : 600;
+        if (!card) return 300;
+
+        return window.innerWidth <= 768
+            ? card.offsetWidth // 👉 1 card en mobile
+            : card.offsetWidth * 2.5; // 👉 desktop como lo tenías
     };
 
     if (nextBtn && prevBtn) {

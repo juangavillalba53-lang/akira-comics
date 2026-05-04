@@ -1003,15 +1003,26 @@ nav {
         width: 92%;
 
         height: 90vh;
-        /* 🔥 cambio clave */
         overflow: hidden;
 
         top: 0 !important;
         touch-action: auto;
 
         display: flex;
-        /* 🔥 importante */
         flex-direction: column;
+
+        position: relative;
+        /* 🔥 IMPORTANTE para la X */
+    }
+
+    /* 🔥 BOTÓN CERRAR (ARREGLADO) */
+    .close-modal {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        font-size: 28px;
+        z-index: 99999;
+        cursor: pointer;
     }
 
     .modal-body {
@@ -1019,21 +1030,18 @@ nav {
         align-items: center;
         text-align: center;
 
-        /* 🔥 CLAVE */
         max-height: 75vh;
-        overflow-y: auto;
         flex: 1;
-        /* 🔥 ocupa todo el espacio */
+
         overflow-y: auto;
+        padding-right: 10px;
+        /* 🔥 separa del scroll */
     }
 
     #modal-img {
         width: 220px;
-        /* 🔥 tamaño fijo */
         height: 220px;
-        /* 🔥 mismo alto siempre */
         object-fit: contain;
-        /* 🔥 mantiene proporción sin deformar */
     }
 
     .modal-info h2 {
