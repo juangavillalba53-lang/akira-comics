@@ -1517,13 +1517,26 @@ nav {
     .guia-card:nth-child(6) {
         grid-column: auto !important;
     }
+}
+
+/* 🔥 CENTRAR TEXTO SOBRE AKIRA (DEFINITIVO) */
+@media (max-width: 768px) {
+
+    .local-description {
+        display: flex !important;
+        justify-content: center !important;
+        padding: 0 15px !important;
+    }
 
     .local-content {
-        text-align: center !important;
+        max-width: 500px !important;
         margin: 0 auto !important;
+        text-align: center !important;
     }
 
     .local-content p {
         text-align: center !important;
+        margin: 0 auto !important;
     }
+
 }
