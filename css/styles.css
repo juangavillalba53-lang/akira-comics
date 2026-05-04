@@ -1043,14 +1043,17 @@ nav {
 
     /* 🔥 GUIA 1 COLUMNA REAL */
     @media (max-width: 768px) {
-        .guia-grid {
-            grid-template-columns: 1fr !important;
-        }
-    }
 
-    .guia-card {
-        width: 90%;
-        max-width: 320px;
+        .guia-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .guia-card {
+            width: 100% !important;
+            min-width: 0 !important;
+            /* 🔥 ESTA ES LA CLAVE */
+        }
+
     }
 
     /* 🔥 TEXTO CENTRADO REAL */
