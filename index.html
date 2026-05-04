@@ -140,6 +140,50 @@
         <div class="boardgames-grid"></div>
     </section>
 
+    <section class="guia-tcg">
+        <h2 class="titulo-guia">GUÍA POKÉMON TCG</h2>
+
+        <div class="guia-grid">
+
+            <div class="guia-card"
+                onclick="abrirModal(event, 'Tipos de Energía en el TCG de Pokémon', guiasTCG.energia, 'assets/img/logo.png')">
+                <h3>Tipos de Energía</h3>
+                <p>Conocé los distintos estilos de juego</p>
+            </div>
+
+            <div class="guia-card"
+                onclick="abrirModal(event, '¿Cómo se juega Pokémon TCG?', guiasTCG.juego, 'assets/img/logo.png')">
+                <h3>Cómo se juega</h3>
+                <p>Aprendé las reglas básicas</p>
+            </div>
+
+            <div class="guia-card"
+                onclick="abrirModal(event, '¿Cómo comprar cartas?', guiasTCG.compra, 'assets/img/logo.png')">
+                <h3>Cómo comprar</h3>
+                <p>Elegí la mejor opción</p>
+            </div>
+
+            <div class="guia-card"
+                onclick="abrirModal(event, '¿Cómo armar tu mazo?', guiasTCG.mazo, 'assets/img/logo.png')">
+                <h3>Armar mazo</h3>
+                <p>Tips para empezar</p>
+            </div>
+
+            <div class="guia-card"
+                onclick="abrirModal(event, 'Formatos del TCG', guiasTCG.formatos, 'assets/img/logo.png')">
+                <h3>Formatos</h3>
+                <p>Diferentes modos de juego</p>
+            </div>
+
+            <div class="guia-card"
+                onclick="abrirModal(event, 'Condiciones especiales', guiasTCG.condiciones, 'assets/img/logo.png')">
+                <h3>Condiciones</h3>
+                <p>Efectos que cambian el juego</p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- INFO LOCAL -->
     <section id="info-local" class="local-description">
         <div class="local-content">
@@ -240,6 +284,7 @@
     </div>
 
     <!-- SCRIPTS -->
+    <script src="js/tcg-info.js"></script>
     <script src="js/main.js"></script>
     <script src="js/productos.js"></script>
     <script src="js/figuras.js"></script>

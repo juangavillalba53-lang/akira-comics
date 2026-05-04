@@ -19,6 +19,7 @@ function abrirModal(e, nombre, descripcion, imagen) {
     modal.style.display = "flex";
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+    document.querySelector('.modal-body').scrollTop = 0;
 }
 
 function cerrarModal() {
@@ -59,10 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const links = navMenu.querySelectorAll('.nav-btn');
+        function resetBurger(spans) {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+
+        const links = navMenu.querySelectorAll('a');
+
         links.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+
+                const spans = burgerBtn.querySelectorAll('span');
+                resetBurger(spans);
             });
         });
     }
