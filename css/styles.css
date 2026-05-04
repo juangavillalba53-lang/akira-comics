@@ -1041,38 +1041,37 @@ nav {
         font-size: 1.2rem;
     }
 
-    /* 🔥 GUIA 1 COLUMNA REAL */
-    @media (max-width: 768px) {
-
-        .guia-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .guia-card {
-            width: 100% !important;
-            min-width: 0 !important;
-            /* 🔥 ESTA ES LA CLAVE */
-        }
-
+    /* 🔥 GUIA (FIX REAL) */
+    .guia-grid {
+        grid-template-columns: 1fr !important;
     }
 
-    /* 🔥 TEXTO CENTRADO REAL */
-    @media (max-width: 768px) {
+    .guia-card {
+        width: 100%;
+        min-width: 0;
+    }
 
-        .local-description {
-            padding: 0 15px;
-        }
+    /* 🔥 IMPORTANTE: arregla tu nth-child SOLO en mobile */
+    .guia-card:nth-child(6) {
+        grid-column: auto;
+    }
 
-        .local-content {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-        }
+    /* 🔥 TEXTO SOBRE AKIRA */
+    .local-description {
+        padding: 0 15px;
+        display: flex;
+        justify-content: center;
+    }
 
-        .local-content p {
-            text-align: center;
-        }
+    .local-content {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
 
+    .local-content p {
+        text-align: center;
     }
 
     /* 🔥 BOTONES */
@@ -1093,7 +1092,7 @@ nav {
         color: #fff;
     }
 
-    /* 🔥 SIN BORROSO */
+    /* 🔥 SACAR EFECTO BORROSO */
     .carousel-container::before,
     .carousel-container::after {
         display: none;
