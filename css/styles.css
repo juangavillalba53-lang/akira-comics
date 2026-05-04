@@ -1041,17 +1041,25 @@ nav {
         font-size: 1.2rem;
     }
 
-    /* 🔥 GUÍA POKÉMON */
+    /* 🔥 GUÍA POKÉMON (FIX REAL) */
     .guia-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 20px;
+        justify-items: center;
     }
 
-    /* 🔥 TEXTO SOBRE AKIRA */
+    .guia-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* 🔥 TEXTO SOBRE AKIRA (FIX REAL) */
     .local-content {
         padding: 0 20px;
         text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .local-content p {
@@ -1076,6 +1084,12 @@ nav {
     .filtros-cartas button.active {
         background: #000 !important;
         color: #fff !important;
+    }
+
+    /* 🔥 SACAR EFECTO BORROSO DEL CARRUSEL */
+    .carousel-container::before,
+    .carousel-container::after {
+        display: none !important;
     }
 }
 
