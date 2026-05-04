@@ -1527,7 +1527,8 @@ nav {
     .local-content p {
         text-align: center !important;
         text-align-last: center !important;
-        max-width: 80%;
+        max-width: 100%;
+        transform: translateX(-7px);
         margin: 0 auto;
     }
 }
