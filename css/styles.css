@@ -1519,24 +1519,13 @@ nav {
     }
 }
 
-/* 🔥 CENTRAR TEXTO SOBRE AKIRA (DEFINITIVO) */
 @media (max-width: 768px) {
-
-    .local-description {
-        display: flex !important;
-        justify-content: center !important;
-        padding: 0 15px !important;
-    }
-
-    .local-content {
-        max-width: 500px !important;
-        margin: 0 auto !important;
-        text-align: center !important;
-    }
 
     .local-content p {
         text-align: center !important;
-        margin: 0 auto !important;
+        text-align-last: center !important;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
 }
