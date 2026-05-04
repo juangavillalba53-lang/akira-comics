@@ -1041,39 +1041,6 @@ nav {
         font-size: 1.2rem;
     }
 
-    /* 🔥 GUIA (FIX REAL) */
-    .guia-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .guia-card {
-        width: 100%;
-        min-width: 0;
-    }
-
-    /* 🔥 IMPORTANTE: arregla tu nth-child SOLO en mobile */
-    .guia-card:nth-child(6) {
-        grid-column: auto;
-    }
-
-    /* 🔥 TEXTO SOBRE AKIRA */
-    .local-description {
-        padding: 0 15px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .local-content {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .local-content p {
-        text-align: center;
-    }
-
     /* 🔥 BOTONES */
     .filtros-cartas {
         display: flex;
@@ -1530,5 +1497,33 @@ nav {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* 🔥 FIX FORZADO MOBILE (DEFINITIVO) */
+@media (max-width: 768px) {
+
+    .guia-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .guia-card {
+        width: 92% !important;
+        max-width: 400px !important;
+    }
+
+    .guia-card:nth-child(6) {
+        grid-column: auto !important;
+    }
+
+    .local-content {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .local-content p {
+        text-align: center !important;
     }
 }
