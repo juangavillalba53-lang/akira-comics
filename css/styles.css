@@ -1520,13 +1520,14 @@ nav {
 }
 
 @media (max-width: 768px) {
-
     .local-content {
-        padding: 0 20px;
+        padding: 0 12px;
     }
 
     .local-content p {
-        text-align: left;
+        text-align: center !important;
+        text-align-last: center !important;
+        max-width: 85%;
+        margin: 0 auto;
     }
-
 }
