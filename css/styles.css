@@ -1528,6 +1528,7 @@ nav {
         text-align: center !important;
         text-align-last: center !important;
         max-width: 80%;
+        transform: translateX(-5px);
         margin: 0 auto;
     }
 }
