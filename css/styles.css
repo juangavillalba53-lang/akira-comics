@@ -1521,14 +1521,13 @@ nav {
 
 @media (max-width: 768px) {
     .local-content {
-        padding: 0 12px;
+        padding: 0 10px;
     }
 
     .local-content p {
         text-align: center !important;
         text-align-last: center !important;
-        max-width: 80%;
-        transform: translateX(-7px);
+        max-width: 100%;
         margin: 0 auto;
     }
 }
